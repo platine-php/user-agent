@@ -79,4 +79,16 @@ class Cpu extends AbstractEntity
         $this->architecture = $architecture;
         return $this;
     }
+
+    /**
+     * The string representation
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return sprintf(
+            '%s',
+            $this->architecture
+        );
+    }
 }

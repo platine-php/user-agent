@@ -47,7 +47,6 @@ declare(strict_types=1);
 
 namespace Platine\UserAgent\Detector;
 
-use Platine\UserAgent\Entity\AbstractEntity;
 use Platine\UserAgent\Entity\Engine;
 
 /**
@@ -58,11 +57,13 @@ class EngineDetector extends AbstractDetector
 {
 
     /**
-     * {@inheritdoc}
-     */
-    public function entity(): AbstractEntity
+    * {@inheritdoc}
+    */
+    public function __construct()
     {
-        return new Engine();
+        parent::__construct();
+
+        $this->entity = new Engine();
     }
 
     /**

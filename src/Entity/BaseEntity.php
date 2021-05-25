@@ -136,4 +136,17 @@ class BaseEntity extends AbstractEntity
 
         return $this;
     }
+
+    /**
+     * The string representation
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return sprintf(
+            '%s %s',
+            $this->name,
+            $this->version
+        );
+    }
 }

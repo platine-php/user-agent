@@ -59,9 +59,11 @@ class BrowserDetector extends AbstractDetector
     /**
      * {@inheritdoc}
      */
-    public function entity(): Browser
+    public function __construct()
     {
-        return new Browser();
+        parent::__construct();
+
+        $this->entity = new Browser();
     }
 
     /**

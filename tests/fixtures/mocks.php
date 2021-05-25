@@ -20,7 +20,7 @@ namespace Platine\UserAgent\Util;
 
 $mock_preg_replace_to_null = false;
 
-function preg_replace($pattern, $replacement, $subject, int $limit = -1)
+function preg_replace($pattern, $replacement, $subject, $limit = -1)
 {
     global $mock_preg_replace_to_null;
     if ($mock_preg_replace_to_null) {

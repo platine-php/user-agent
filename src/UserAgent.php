@@ -157,11 +157,11 @@ class UserAgent
     {
         $this->userAgent = $userAgent;
 
-        $this->browser = $this->browserDetector->detect($this->userAgent);
-        $this->cpu = $this->cpuDetector->detect($this->userAgent);
-        $this->engine = $this->engineDetector->detect($this->userAgent);
-        $this->device = $this->deviceDetector->detect($this->userAgent);
-        $this->os = $this->osDetector->detect($this->userAgent);
+        $this->browserDetector->detect($this->userAgent);
+        $this->cpuDetector->detect($this->userAgent);
+        $this->engineDetector->detect($this->userAgent);
+        $this->deviceDetector->detect($this->userAgent);
+        $this->osDetector->detect($this->userAgent);
 
         return $this;
     }
@@ -172,7 +172,9 @@ class UserAgent
      */
     public function os(): Os
     {
-        return $this->os;
+        /** @var Os $os */
+        $os = $this->osDetector->entity();
+        return $this->os = $os;
     }
 
     /**
@@ -181,7 +183,10 @@ class UserAgent
      */
     public function device(): Device
     {
-        return $this->device;
+        /** @var Device $device */
+        $device = $this->deviceDetector->entity();
+
+        return $this->device = $device;
     }
 
     /**
@@ -190,7 +195,10 @@ class UserAgent
      */
     public function browser(): Browser
     {
-        return $this->browser;
+        /** @var Browser $browser */
+        $browser = $this->browserDetector->entity();
+
+        return $this->browser = $browser;
     }
 
     /**
@@ -199,7 +207,10 @@ class UserAgent
      */
     public function engine(): Engine
     {
-        return $this->engine;
+        /** @var Engine $engine */
+        $engine = $this->engineDetector->entity();
+
+        return $this->engine = $engine;
     }
 
     /**
@@ -208,6 +219,9 @@ class UserAgent
      */
     public function cpu(): Cpu
     {
-        return $this->cpu;
+        /** @var Cpu $cpu */
+        $cpu = $this->cpuDetector->entity();
+
+        return $this->cpu = $cpu;
     }
 }

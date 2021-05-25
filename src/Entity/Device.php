@@ -134,4 +134,18 @@ class Device extends AbstractEntity
 
         return $this;
     }
+
+    /**
+     * The string representation
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return sprintf(
+            '%s, %s %s',
+            $this->model,
+            $this->vendor,
+            $this->type
+        );
+    }
 }

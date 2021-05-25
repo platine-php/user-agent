@@ -47,7 +47,6 @@ declare(strict_types=1);
 
 namespace Platine\UserAgent\Detector;
 
-use Platine\UserAgent\Entity\AbstractEntity;
 use Platine\UserAgent\Entity\Device;
 
 /**
@@ -57,12 +56,14 @@ use Platine\UserAgent\Entity\Device;
 class DeviceDetector extends AbstractDetector
 {
 
-    /**
+     /**
      * {@inheritdoc}
      */
-    public function entity(): AbstractEntity
+    public function __construct()
     {
-        return new Device();
+        parent::__construct();
+
+        $this->entity = new Device();
     }
 
     /**

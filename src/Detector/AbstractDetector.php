@@ -47,7 +47,11 @@ declare(strict_types=1);
 
 namespace Platine\UserAgent\Detector;
 
-use Platine\UserAgent\Entity\AbstractEntity;
+use Platine\UserAgent\Entity\Browser;
+use Platine\UserAgent\Entity\Cpu;
+use Platine\UserAgent\Entity\Device;
+use Platine\UserAgent\Entity\Engine;
+use Platine\UserAgent\Entity\Os;
 use Platine\UserAgent\Util\Helper;
 use function Platine\UserAgent\Util\preg_replace;
 
@@ -88,16 +92,15 @@ abstract class AbstractDetector
 
     /**
      * The current entity
-     * @var AbstractEntity
+     * @var Browser|Cpu|Os|Device|Engine
      */
-    protected AbstractEntity $entity;
+    protected $entity;
 
     /**
      * Create new instance
      */
     public function __construct()
     {
-        $this->entity = $this->entity();
         $this->maps = $this->maps();
         $this->regex = $this->regex();
     }
@@ -105,9 +108,9 @@ abstract class AbstractDetector
     /**
      * Detect the entity for the given user agent
      * @param string $userAgent
-     * @return AbstractEntity
+     * @return void
      */
-    public function detect(string $userAgent): AbstractEntity
+    public function detect(string $userAgent): void
     {
         $regex = $this->regex();
         $regexLength = count($regex);
@@ -124,7 +127,10 @@ abstract class AbstractDetector
 
             $regLength = count($reg);
             while ($j < $regLength && ! $matches) {
-                preg_match($reg[$j++], $userAgent, $matches);
+                $pattern = $reg[$j++];
+                if (is_string($pattern)) {
+                    preg_match($pattern, $userAgent, $matches);
+                }
 
                 if (count($matches) > 0) {
                     $lengthProperty = count($property);
@@ -178,14 +184,23 @@ abstract class AbstractDetector
                                 }
                             }
                         } else {
-                            $this->fillEntity([$q => $match]);
+                            if (is_string($q)) {
+                                $this->fillEntity([$q => $match]);
+                            }
                         }
                     }
                 }
             }
             $i += 2;
         }
+    }
 
+    /**
+     * Return the entity instance
+     * @return Browser|Cpu|Os|Device|Engine
+     */
+    public function entity()
+    {
         return $this->entity;
     }
 
@@ -200,12 +215,6 @@ abstract class AbstractDetector
      * @return array<array<string>>|array<array<array<string>>>
      */
     abstract public function regex(): array;
-
-    /**
-     * Return the entity instance
-     * @return AbstractEntity
-     */
-    abstract public function entity(): AbstractEntity;
 
     /**
      * Fill the entity data

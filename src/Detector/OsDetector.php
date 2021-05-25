@@ -47,7 +47,6 @@ declare(strict_types=1);
 
 namespace Platine\UserAgent\Detector;
 
-use Platine\UserAgent\Entity\AbstractEntity;
 use Platine\UserAgent\Entity\Os;
 
 /**
@@ -58,12 +57,15 @@ class OsDetector extends AbstractDetector
 {
 
     /**
-     * {@inheritdoc}
-     */
-    public function entity(): AbstractEntity
+    * {@inheritdoc}
+    */
+    public function __construct()
     {
-        return new Os();
+        parent::__construct();
+
+        $this->entity = new Os();
     }
+
 
     /**
      * {@inheritdoc}

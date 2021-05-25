@@ -47,7 +47,6 @@ declare(strict_types=1);
 
 namespace Platine\UserAgent\Detector;
 
-use Platine\UserAgent\Entity\AbstractEntity;
 use Platine\UserAgent\Entity\Cpu;
 
 /**
@@ -60,9 +59,11 @@ class CpuDetector extends AbstractDetector
     /**
      * {@inheritdoc}
      */
-    public function entity(): AbstractEntity
+    public function __construct()
     {
-        return new Cpu();
+        parent::__construct();
+
+        $this->entity = new Cpu();
     }
 
     /**

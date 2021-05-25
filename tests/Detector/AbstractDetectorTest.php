@@ -20,7 +20,9 @@ class AbstractDetectorTest extends PlatineTestCase
     {
         $s = new CustomDetector();
 
-        $en = $s->detect('my fooo');
+        $s->detect('my fooo');
+        $en = $s->entity();
+        
         $this->assertEquals('', $en->getName());
         $this->assertEquals('', $en->getVersion());
         $this->assertEquals(0, $en->getMajor());
