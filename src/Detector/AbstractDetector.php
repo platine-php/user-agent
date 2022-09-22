@@ -53,7 +53,6 @@ use Platine\UserAgent\Entity\Device;
 use Platine\UserAgent\Entity\Engine;
 use Platine\UserAgent\Entity\Os;
 use Platine\UserAgent\Util\Helper;
-use function Platine\UserAgent\Util\preg_replace;
 
 /**
  * Class AbstractDetector
