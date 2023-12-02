@@ -15,14 +15,13 @@ use Platine\Test\Fixture\UserAgent\CustomDetector;
  */
 class AbstractDetectorTest extends PlatineTestCase
 {
-
     public function testCustomDetector(): void
     {
         $s = new CustomDetector();
 
         $s->detect('my fooo');
         $en = $s->entity();
-        
+
         $this->assertEquals('', $en->getName());
         $this->assertEquals('', $en->getVersion());
         $this->assertEquals(0, $en->getMajor());

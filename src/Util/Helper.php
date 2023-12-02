@@ -53,8 +53,6 @@ namespace Platine\UserAgent\Util;
  */
 class Helper
 {
-
-
     /**
      * Return the major version number from the full version
      * @param string $fullVersion

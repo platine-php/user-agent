@@ -55,7 +55,6 @@ use Platine\UserAgent\Entity\Engine;
  */
 class EngineDetector extends AbstractDetector
 {
-
     /**
     * {@inheritdoc}
     */

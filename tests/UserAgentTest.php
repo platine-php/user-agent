@@ -15,7 +15,6 @@ use Platine\UserAgent\UserAgent;
  */
 class UserAgentTest extends PlatineTestCase
 {
-
     /**
      * test Validate method
      *

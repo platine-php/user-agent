@@ -15,14 +15,13 @@ use Platine\UserAgent\Entity\Browser;
  */
 class BrowserTest extends PlatineTestCase
 {
-
     public function testToString(): void
     {
         $s = new Browser();
 
         $s->setName('Chrome');
         $s->setVersion('10.8.2');
-        
+
         $this->assertEquals('Chrome 10.8.2', $s->__toString());
-    }    
+    }
 }

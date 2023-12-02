@@ -15,7 +15,6 @@ use Platine\UserAgent\Entity\Device;
  */
 class DeviceTest extends PlatineTestCase
 {
-
     public function testToString(): void
     {
         $s = new Device();
@@ -23,7 +22,7 @@ class DeviceTest extends PlatineTestCase
         $s->setModel('iPhone');
         $s->setVendor('Apple');
         $s->setType('Mobile');
-        
+
         $this->assertEquals('iPhone, Apple Mobile', $s->__toString());
-    }    
+    }
 }

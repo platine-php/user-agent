@@ -55,7 +55,6 @@ use Platine\UserAgent\Entity\Device;
  */
 class DeviceDetector extends AbstractDetector
 {
-
      /**
      * {@inheritdoc}
      */

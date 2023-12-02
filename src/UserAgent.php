@@ -64,7 +64,6 @@ use Platine\UserAgent\Entity\Os;
  */
 class UserAgent
 {
-
     /**
      * Operating System detector
      * @var OsDetector

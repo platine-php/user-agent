@@ -55,7 +55,6 @@ use Platine\UserAgent\Entity\Cpu;
  */
 class CpuDetector extends AbstractDetector
 {
-
     /**
      * {@inheritdoc}
      */

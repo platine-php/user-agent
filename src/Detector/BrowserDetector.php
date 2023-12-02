@@ -55,7 +55,6 @@ use Platine\UserAgent\Entity\Browser;
  */
 class BrowserDetector extends AbstractDetector
 {
-
     /**
      * {@inheritdoc}
      */

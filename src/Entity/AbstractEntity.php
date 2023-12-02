@@ -55,7 +55,6 @@ use Platine\UserAgent\Util\Helper;
  */
 abstract class AbstractEntity
 {
-
     /**
      * Set the information for this entity
      * @param array<string, string|int> $data

@@ -55,7 +55,6 @@ use Platine\UserAgent\Entity\Os;
  */
 class OsDetector extends AbstractDetector
 {
-
     /**
     * {@inheritdoc}
     */

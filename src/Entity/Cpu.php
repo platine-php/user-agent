@@ -53,7 +53,6 @@ namespace Platine\UserAgent\Entity;
  */
 class Cpu extends AbstractEntity
 {
-
     /**
      * The CPU architecture
      * @var string

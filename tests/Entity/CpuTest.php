@@ -15,14 +15,13 @@ use Platine\UserAgent\Entity\Cpu;
  */
 class CpuTest extends PlatineTestCase
 {
-
     public function testToString(): void
     {
         $s = new Cpu();
 
         $s->setArchitecture('amd64');
-        
+
         $this->assertEquals('amd64', $s->__toString());
         $this->assertEquals('amd64', $s->getArchitecture());
-    }    
+    }
 }

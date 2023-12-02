@@ -15,7 +15,6 @@ use Platine\UserAgent\Util\Helper;
  */
 class HelperTest extends PlatineTestCase
 {
-
     public function testGetMajorVersion(): void
     {
         $res = Helper::getMajorVersion('78.88');

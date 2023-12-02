@@ -9,7 +9,6 @@ use Platine\UserAgent\Entity\Browser;
 
 class CustomDetector extends AbstractDetector
 {
-
     public function __construct()
     {
         parent::__construct();

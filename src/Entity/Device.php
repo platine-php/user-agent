@@ -53,7 +53,6 @@ namespace Platine\UserAgent\Entity;
  */
 class Device extends AbstractEntity
 {
-
     /**
      * The device model
      * @var string

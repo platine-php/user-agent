@@ -60,7 +60,6 @@ use Platine\UserAgent\Util\Helper;
  */
 abstract class AbstractDetector
 {
-
     /**
      * Data type and definitions
      */
