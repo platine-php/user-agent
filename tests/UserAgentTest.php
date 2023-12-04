@@ -63,6 +63,22 @@ class UserAgentTest extends PlatineTestCase
     {
         return [
             [
+                'mwb-db-client Opera/9.80 (Linux armv7l ; U; HbbTV/1.1.1 (; TOSHIBA; 32SL863; 19.2.39.208; 3; ) ; ToshibaTP/1.1.1 () ; en) Presto/2.6.33 Version/10.60',
+                10,
+                'Opera',
+                '10.60',
+                'arm',
+                '32SL863',
+                'smart-tv',
+                'TOSHIBA',
+                'Presto',
+                2,
+                '2.6.33',
+                7,
+                'Linux',
+                'armv7l',
+            ],
+            [
                 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36',
                 90,
                 'Chrome',

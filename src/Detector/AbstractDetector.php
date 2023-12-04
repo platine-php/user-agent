@@ -246,7 +246,7 @@ abstract class AbstractDetector
     protected function trim(string $str)
     {
         return preg_replace(
-            '/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/',
+            '/^[\s\xA0]+|[\s\xA0]+$/',
             '',
             $str
         );
