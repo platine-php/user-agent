@@ -48,7 +48,7 @@ declare(strict_types=1);
 namespace Platine\UserAgent\Entity;
 
 /**
- * Class Os
+ * @class Os
  * @package Platine\UserAgent\Entity
  */
 class Os extends BaseEntity

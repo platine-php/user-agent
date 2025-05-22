@@ -47,11 +47,13 @@ declare(strict_types=1);
 
 namespace Platine\UserAgent\Entity;
 
+use Stringable;
+
 /**
- * Class Cpu
+ * @class Cpu
  * @package Platine\UserAgent\Entity
  */
-class Cpu extends AbstractEntity
+class Cpu extends AbstractEntity implements Stringable
 {
     /**
      * The CPU architecture

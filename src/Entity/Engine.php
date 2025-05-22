@@ -48,7 +48,7 @@ declare(strict_types=1);
 namespace Platine\UserAgent\Entity;
 
 /**
- * Class Engine
+ * @class Engine
  * @package Platine\UserAgent\Entity
  */
 class Engine extends BaseEntity

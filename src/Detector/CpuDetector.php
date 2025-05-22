@@ -50,7 +50,7 @@ namespace Platine\UserAgent\Detector;
 use Platine\UserAgent\Entity\Cpu;
 
 /**
- * Class CpuDetector
+ * @class CpuDetector
  * @package Platine\UserAgent\Detector
  */
 class CpuDetector extends AbstractDetector

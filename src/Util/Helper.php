@@ -48,7 +48,7 @@ declare(strict_types=1);
 namespace Platine\UserAgent\Util;
 
 /**
- * Class Helper
+ * @class Helper
  * @package Platine\UserAgent\Util
  */
 class Helper
@@ -63,9 +63,8 @@ class Helper
         $version = preg_replace('/[^\d\.]/', '', $fullVersion);
         if ($version !== null) {
             $parts = explode('.', $version);
-            if (is_array($parts) && isset($parts[0])) {
-                return (int) $parts[0];
-            }
+
+            return (int) $parts[0];
         }
         return 0;
     }

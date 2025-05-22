@@ -50,7 +50,7 @@ namespace Platine\UserAgent\Detector;
 use Platine\UserAgent\Entity\Browser;
 
 /**
- * Class BrowserDetector
+ * @class BrowserDetector
  * @package Platine\UserAgent\Detector
  */
 class BrowserDetector extends AbstractDetector
@@ -93,20 +93,16 @@ class BrowserDetector extends AbstractDetector
     {
         return [
             [
-
                 // Presto based
                 '/(opera\smini)\/([\w\.-]+)/i',                                       // Opera Mini
                 '/(opera\s[mobiletab]+).+version\/([\w\.-]+)/i',                      // Opera Mobi/Tablet
                 '/(opera).+version\/([\w\.]+)/i',                                     // Opera > 9.80
                 '/(opera)[\/\s]+([\w\.]+)/i'                                          // Opera < 9.80
             ], [self::NAME, self::VERSION], [
-
                 '/(opios)[\/\s]+([\w\.]+)/i'                                        // Opera mini on iphone >= 8.0
             ], [[self::NAME, 'Opera Mini'], self::VERSION], [
-
                 '/\s(opr)\/([\w\.]+)/i'                                              // Opera Webkit
             ], [[self::NAME, 'Opera'], self::VERSION], [
-
                 // Mixed
                 '/(kindle)\/([\w\.]+)/i',                                             // Kindle
                 '/(lunascape|maxthon|netfront|jasmine|blazer)[\/\s]?([\w\.]*)/i',
@@ -123,19 +119,14 @@ class BrowserDetector extends AbstractDetector
                 '/(chromium|flock|rockmelt|midori|epiphany|silk|skyfire|ovibrowser|bolt|iron|vivaldi|iridium|phantomjs|bowser|quark|qupzilla|falkon)\/([\w\.-]+)/i'
                 // Chromium/Flock/RockMelt/Midori/Epiphany/Silk/Skyfire/Bolt/Iron/Iridium/PhantomJS/Bowser/QupZilla/Falkon
             ], [self::NAME, self::VERSION], [
-
                 '/(konqueror)\/([\w\.]+)/i'                                           // Konqueror
             ], [[self::NAME, 'Konqueror'], self::VERSION], [
-
                 '/(trident).+rv[:\s]([\w\.]+).+like\sgecko/i'                         // IE11
             ], [[self::NAME, 'IE'], self::VERSION], [
-
                 '/(edge|edgios|edga|edg)\/((\d+)?[\w\.]+)/i'                         // Microsoft Edge
             ], [[self::NAME, 'Edge'], self::VERSION], [
-
                 '/(yabrowser)\/([\w\.]+)/i'                                           // Yandex
             ], [[self::NAME, 'Yandex'], self::VERSION], [
-
                 '/(puffin)\/([\w\.]+)/i'                                              // Puffin
             ], [[self::NAME, 'Puffin'], self::VERSION], [
 

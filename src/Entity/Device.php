@@ -47,11 +47,13 @@ declare(strict_types=1);
 
 namespace Platine\UserAgent\Entity;
 
+use Stringable;
+
 /**
- * Class Device
+ * @class Device
  * @package Platine\UserAgent\Entity
  */
-class Device extends AbstractEntity
+class Device extends AbstractEntity implements Stringable
 {
     /**
      * The device model

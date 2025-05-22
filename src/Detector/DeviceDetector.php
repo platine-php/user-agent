@@ -50,7 +50,7 @@ namespace Platine\UserAgent\Detector;
 use Platine\UserAgent\Entity\Device;
 
 /**
- * Class DeviceDetector
+ * @class DeviceDetector
  * @package Platine\UserAgent\Detector
  */
 class DeviceDetector extends AbstractDetector
@@ -347,7 +347,6 @@ class DeviceDetector extends AbstractDetector
 
                 '/(android[\w\.\s\-]{0,9});.+build/i'                                 // Generic Android Device
             ], [self::MODEL, [self::VENDOR, 'Generic']]
-
         ];
     }
 }

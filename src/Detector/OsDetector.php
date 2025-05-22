@@ -50,7 +50,7 @@ namespace Platine\UserAgent\Detector;
 use Platine\UserAgent\Entity\Os;
 
 /**
- * Class OsDetector
+ * @class OsDetector
  * @package Platine\UserAgent\Detector
  */
 class OsDetector extends AbstractDetector
@@ -97,7 +97,6 @@ class OsDetector extends AbstractDetector
     {
         return [
             [
-
                 // Windows based
                 '/microsoft\s(windows)\s(vista|xp)/i'                                 // Windows (iTunes)
             ], [self::NAME, self::VERSION], [

@@ -48,7 +48,7 @@ declare(strict_types=1);
 namespace Platine\UserAgent\Entity;
 
 /**
- * Class Browser
+ * @class Browser
  * @package Platine\UserAgent\Entity
  */
 class Browser extends BaseEntity

@@ -55,7 +55,7 @@ use Platine\UserAgent\Entity\Os;
 use Platine\UserAgent\Util\Helper;
 
 /**
- * Class AbstractDetector
+ * @class AbstractDetector
  * @package Platine\UserAgent\Detector
  */
 abstract class AbstractDetector
@@ -92,7 +92,7 @@ abstract class AbstractDetector
      * The current entity
      * @var Browser|Cpu|Os|Device|Engine
      */
-    protected $entity;
+    protected Browser|Cpu|Os|Device|Engine $entity;
 
     /**
      * Create new instance
@@ -113,7 +113,7 @@ abstract class AbstractDetector
         $regex = $this->regex();
         $regexLength = count($regex);
         $i = 0;
-        $match = null;
+        $match = '';
         $matches = [];
 
         while ($i < $regexLength && ! $matches) {
@@ -155,18 +155,17 @@ abstract class AbstractDetector
                                     $functionName = Helper::replaceFirst('__', '', $q[1]);
                                     $args = explode('.', $q[2]);
                                     $argument = $this->maps();
-                                    if (is_array($args)) {
-                                        foreach ($args as $key) {
-                                            $argument = $argument[$key];
-                                        }
+                                    foreach ($args as $key) {
+                                        $argument = $argument[$key];
                                     }
+
                                     $result = null;
                                     if (method_exists($this, $functionName)) {
                                         $result = $this->{$functionName}($match, $argument);
                                     }
                                     $this->fillEntity([$q[0] => $result]);
                                 } else {
-                                    $replacedMatch = preg_replace($q[1], $q[2], $match);
+                                    $replacedMatch = preg_replace($q[1], $q[2], (string)$match);
                                     if ($replacedMatch !== null) {
                                         $this->fillEntity([$q[0] => $replacedMatch]);
                                     }
@@ -174,7 +173,7 @@ abstract class AbstractDetector
                             } elseif (count($q) === 4) {
                                 if (Helper::startsWith($q[3], '__')) {
                                     $functionName = Helper::replaceFirst('__', '', $q[3]);
-                                    $result = preg_replace($q[1], $q[2], $match);
+                                    $result = preg_replace($q[1], $q[2], (string)$match);
                                     if (method_exists($this, $functionName)) {
                                         $result = $this->{$functionName}($result);
                                     }
@@ -197,7 +196,7 @@ abstract class AbstractDetector
      * Return the entity instance
      * @return Browser|Cpu|Os|Device|Engine
      */
-    public function entity()
+    public function entity(): Browser|Cpu|Os|Device|Engine
     {
         return $this->entity;
     }
@@ -243,7 +242,7 @@ abstract class AbstractDetector
      * @param string $str
      * @return string|string[]|null
      */
-    protected function trim(string $str)
+    protected function trim(string $str): string|array|null
     {
         return preg_replace(
             '/^[\s\xA0]+|[\s\xA0]+$/',

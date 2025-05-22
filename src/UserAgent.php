@@ -59,7 +59,7 @@ use Platine\UserAgent\Entity\Engine;
 use Platine\UserAgent\Entity\Os;
 
 /**
- * Class UserAgent
+ * @class UserAgent
  * @package Platine\UserAgent
  */
 class UserAgent
@@ -173,6 +173,7 @@ class UserAgent
     {
         /** @var Os $os */
         $os = $this->osDetector->entity();
+
         return $this->os = $os;
     }
 

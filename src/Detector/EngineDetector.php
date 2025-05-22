@@ -50,7 +50,7 @@ namespace Platine\UserAgent\Detector;
 use Platine\UserAgent\Entity\Engine;
 
 /**
- * Class EngineDetector
+ * @class EngineDetector
  * @package Platine\UserAgent\Detector
  */
 class EngineDetector extends AbstractDetector
@@ -80,7 +80,6 @@ class EngineDetector extends AbstractDetector
     {
         return [
             [
-
                 '/windows.+\sedge\/([\w\.]+)/i '                                      // EdgeHTML
             ], [self::VERSION, [self::NAME, 'EdgeHTML']], [
 
@@ -96,7 +95,6 @@ class EngineDetector extends AbstractDetector
 
                 '/rv\:([\w\.]{1,9}).+(gecko)/i'                                       // Gecko
             ], [self::VERSION, self::NAME]
-
         ];
     }
 }

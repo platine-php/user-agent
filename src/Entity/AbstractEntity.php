@@ -50,7 +50,7 @@ namespace Platine\UserAgent\Entity;
 use Platine\UserAgent\Util\Helper;
 
 /**
- * Class AbstractEntity
+ * @class AbstractEntity
  * @package Platine\UserAgent\Entity
  */
 abstract class AbstractEntity

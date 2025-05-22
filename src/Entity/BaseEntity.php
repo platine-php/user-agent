@@ -48,12 +48,13 @@ declare(strict_types=1);
 namespace Platine\UserAgent\Entity;
 
 use Platine\UserAgent\Util\Helper;
+use Stringable;
 
 /**
- * Class BaseEntity
+ * @class BaseEntity
  * @package Platine\UserAgent\Entity
  */
-class BaseEntity extends AbstractEntity
+class BaseEntity extends AbstractEntity implements Stringable
 {
     /**
      * The major version number
