@@ -254,7 +254,7 @@ abstract class AbstractDetector
     /**
      * Replace given string using map data.
      * @param string $str
-     * @param array<string, mixed> $maps
+     * @param array<string|int, mixed> $maps
      * @return string|null
      */
     protected function str(string $str, array $maps): ?string
@@ -268,7 +268,11 @@ abstract class AbstractDetector
                     }
                 }
             } elseif (strpos($value, $str) !== false) {
-                return $key === self::UNKNOWN ? null : $key;
+                if ($key === self::UNKNOWN || is_string($key) === false) {
+                    return null;
+                }
+
+                return  $key;
             }
         }
 
